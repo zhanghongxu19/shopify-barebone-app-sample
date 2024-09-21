@@ -1,0 +1,33 @@
+name = "App Sample"
+client_id = "d418295c765e2cce9efcd1340e270213"
+application_url = "https://shopify-barebone-app-sample-i9mk.onrender.com/"
+embedded = true
+handle = "app-sample"
+[access_scopes]
+scopes = "write_products,write_discounts,write_orders,write_payment_customizations,write_delivery_customizations,write_pixels,read_customer_events,write_customers,write_assigned_fulfillment_orders,write_merchant_managed_fulfillment_orders,write_third_party_fulfillment_orders,write_fulfillments,write_inventory,unauthenticated_write_checkouts,unauthenticated_read_product_listings,unauthenticated_write_customers,unauthenticated_read_selling_plans"
+[access.admin]
+direct_api_mode = "online"
+[auth]
+redirect_urls = [
+  "https://shopify-barebone-app-sample-i9mk.onrender.com/callback"
+]
+[webhooks]
+api_version = "2024-04"
+customer_deletion_url = "https://shopify-barebone-app-sample-i9mk.onrender.com/webhookgdpr"
+customer_data_request_url = "https://shopify-barebone-app-sample-i9mk.onrender.com/webhookgdpr"
+shop_deletion_url = "https://shopify-barebone-app-sample-i9mk.onrender.com/webhookgdpr"
+[[webhooks.subscriptions]]
+topics = [ "app/uninstalled" ]
+compliance_topics = [ "customers/redact", "customers/data_request", "shop/redact" ]
+uri = "/webhooks"
+[app_proxy]
+url = "https://shopify-barebone-app-sample-i9mk.onrender.com/appproxy"
+subpath = "bareboneproxy"
+prefix = "apps"
+[pos]
+embedded = false
+[app_preferences]
+url = "https://shopify-barebone-app-sample-i9mk.onrender.com"
+[build]
+automatically_update_urls_on_dev = false
+include_config_on_deploy = true
